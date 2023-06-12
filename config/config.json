@@ -19,5 +19,6 @@
     "database": "test",
     "host": "127.0.0.1",
     "dialect": "postgres"
-  }
+  },
+  "secret_key": "VGyyCXIgsj3A3wwRNyYzxNOuxVyl6mhPwyhvKv5Afu9nIi7QgyywsgWrIukxyNfp"
 }

@@ -9,7 +9,6 @@ class UserController {
 
     async findUserById(req, res){
         const user = await userRepo.findById(req.params['id'])
-        console.log(user)
         res.send(user)
     }
 }

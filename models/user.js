@@ -28,11 +28,12 @@ module.exports = (sequelize) => sequelize.define(
       type: DataTypes.ENUM("TEACHER", "STUDENT", "ADMIN"),
       allowNull: false
   }
-}, {
-  defaultScope: {
-    attributes: {
-      exclude: ['password', 'role']
-    }
-  }
-  }
+}, 
+// {
+//   defaultScope: {
+//     attributes: {
+//       exclude: ['updatedAt']
+//     }
+//   }
+//   }
 )

@@ -12,6 +12,12 @@ class UserRepo{
 
         return user
     }
+
+    async findByNickname(nickname){
+        return await User.findOne({where: {nickname: nickname}})
+            .then(user => user)
+            .catch(err => console.error(err))
+    }
 }
 
 module.exports = new UserRepo()

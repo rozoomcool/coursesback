@@ -6,7 +6,7 @@ module.exports.generateAccessToken = (id, role) => {
         id,
         role
     }
-    return jwt.sign(payload, secret_key, {expiresIn: "24000000"})
+    return jwt.sign(payload, secret_key, {expiresIn: "240000000"})
 }
 
 module.exports.verifyToken = (token) => {

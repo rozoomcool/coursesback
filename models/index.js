@@ -37,6 +37,10 @@ Object.keys(db).forEach(modelName => {
   }
 });
 
+db["user"].belongsToMany(db["course"], {through: db["enrolment"]})
+db["course"].hasMany(db["chapter"])
+db['chapter'].hasMany(db['lesson'])
+
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 

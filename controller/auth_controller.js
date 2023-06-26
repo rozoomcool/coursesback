@@ -14,7 +14,7 @@
                 return res.status(400).json({message: "validation faild", errors})
             }
 
-            const {nickname, email, password} = req.body
+            const {nickname, email, password, firstname, lastname} = req.body
             const saltRounds = 8
 
             const candidate = await userRepo.findByNickname(nickname)
@@ -27,6 +27,8 @@
                         nickname,
                         email,
                         password: hash,
+                        firstname,
+                        lastname,
                         role: "STUDENT"
                     })
 

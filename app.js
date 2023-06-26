@@ -19,15 +19,20 @@ app.use('/auth', [
     .isLength({min: 6, max: 16}),
     check('email', "incorrect email")
     .notEmpty()
+    .trim()
     .isEmail(),
     check('password', "incorrect password")
     .notEmpty()
     .isLength({min: 8, max: 24}),
+    check('age', "Incorrect age format")
+    .isInt(),
+    check('phone', "Incorrect phone format")
+    .isMobilePhone()
 ], authRouter)
 
 const start = () => {
     try{
-        db.sequelize.sync({force: true}).then((req) => {
+        db.sequelize.sync().then((req) => {
             app.listen(PORT, () => console.log(`Server running at ${PORT}`))
         }).catch((err) => console.error("ERROR TO DB CONNECTION"))
     } catch (e) {

@@ -1,7 +1,7 @@
 const { Sequelize, DataTypes, Model } = require("sequelize");
 const { sequelize } = require(".");
 
-module.exports = (sequelize) => sequelize.define(
+module.exports = (sequelize, DataTypes) => sequelize.define(
   'user',
   {
     id: {
@@ -14,20 +14,36 @@ module.exports = (sequelize) => sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
       unique: true
-  },
-  email: {
+    },
+    email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true
+    },
+    password: {
       type: DataTypes.STRING,
-      allowNull: false,
-      unique: true
-  },
-  password: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  role: {
-      type: DataTypes.ENUM("TEACHER", "STUDENT", "ADMIN"),
       allowNull: false
-  }
+    },
+    firstname: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    lastname: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    age: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    phone: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    role: {
+        type: DataTypes.ENUM("TEACHER", "STUDENT", "ADMIN"),
+        allowNull: false
+    }
 }, 
 // {
 //   defaultScope: {
